@@ -1,0 +1,32 @@
+# Ignore node_modules directory
+node_modules/
+
+# Ignore log files
+*.log
+
+# Ignore environment variables
+.env
+
+# Ignore build directories
+dist/
+build/
+
+
+hats-frontend/.env
+hats-frontend/.next
+hats-frontend/.vercel
+hats-frontend/.yarn
+hats-frontend/.pnp.*
+hats-frontend/.yarnrc
+hats-frontend/.yarnrc.yml
+hats-frontend/.yarn-integrity
+hats-frontend/.yarn-metadata.json
+hats-frontend/node_modules
+hats-frontend/node_modules/
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE specific files
+.vscode/
+.idea/
