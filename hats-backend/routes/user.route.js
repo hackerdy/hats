@@ -200,9 +200,9 @@ const createKeyboard = () => {
   return new InlineKeyboard()
     .url('Open App', 'https://t.me/hats_appbot/club')
     .row()
-    .url('Follow Twitter Club', 'https://x.com/')
+    .url('Follow Twitter Club', 'https://x.com/the_hatsclub')
     .row()
-    .url('Join Telegram Channel', 'https://t.me/hats_token');
+    .url('Join Telegram Channel', 'https://t.me/hats_club');
 };
 
 
@@ -212,7 +212,27 @@ bot.on('my_chat_member', async (ctx) => {
       'Welcome to the Hats club! Join our channel and follow us:',
       { reply_markup: createKeyboard() }
     );
+  } else {
+    await ctx.reply('Welcome to Telegram Referral Hub! Please join our channel and follow us:', {
+      reply_markup: createKeyboard(),
+    });
   }
+});
+
+bot.on('message', async (ctx) => {
+  await ctx.reply(
+    'Welcome! Please join our Telegram channel and follow us on Twitter:',
+    { reply_markup: createKeyboard() }
+  );
+});
+
+
+
+bot.command('start', async (ctx) => {
+  await ctx.reply(
+    'Welcome! Please join our Telegram channel and follow us on Twitter:',
+    { reply_markup: createKeyboard() }
+  );
 });
 
 bot.start();
