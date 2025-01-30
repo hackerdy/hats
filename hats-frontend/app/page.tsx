@@ -37,17 +37,16 @@ export default function Home() {
       if (startParam && user) {
         try {
           await axios.post(
-            `${process.env.NEXT_PUBLIC_API_URL}/referral/record-referral`,
-            {
-              referralCode: startParam,
-              newUserTelegramId: user.telegramId
-            },
-            {
-              headers: { 
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${initData}`
-              }
-            }
+           `${process.env.NEXT_PUBLIC_API_URL}/referral/record-referral`,
+                     {
+                       telegramId: user?.telegramId
+                     },
+                     {
+                       headers: {
+                         'Authorization': `Bearer ${WebApp.initData}`,
+                         'Telegram-Init-Data': WebApp.initData
+                       }
+                     }
           );
         } catch (error) {
           console.log('Error recording referral:', error);
