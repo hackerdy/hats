@@ -39,7 +39,7 @@ export default function Home() {
           await axios.post(
            `${process.env.NEXT_PUBLIC_API_URL}/referral/record-referral`,
                      {
-                       telegramId: user?.telegramId,
+                      newUserTelegramId: user?.telegramId,
                        referralCode : startParam
                      },
                      {

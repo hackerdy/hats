@@ -48,7 +48,7 @@ router.post('/record-referral', authMiddleware, async (req, res) => {
   try {
     await session.withTransaction(async () => {
       const { referralCode, newUserTelegramId } = req.body;
-
+     console.log(referralCode, newUserTelegramId);  
       // Validate input
       if (!referralCode || !newUserTelegramId) {
         return res.status(400).json({ message: 'Missing required fields' });
