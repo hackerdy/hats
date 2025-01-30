@@ -65,7 +65,6 @@ export default function ProfilePage() {
 
   return (
     <main className="min-h-screen flex flex-col p-4 max-w-md mx-auto">
-      <h1 className="text-2xl font-bold text-white mb-4">Your Profile</h1>
       {user && <UserProfile user={user} />}
       <div className="mt-4">{user && <BalanceCard user={user} />}</div>
       <div className="mt-4">
