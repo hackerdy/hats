@@ -1,0 +1,3 @@
+[submodule "hats-frontend"]
+	path = hats-frontend
+	url = https://github.com/hackerdy/hats-frontend.git
