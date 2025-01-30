@@ -30,7 +30,7 @@ router.post('/generate-link', validateTelegramId, async (req, res) => {
     }
 
     res.json({ 
-      referralLink: `https://t.me/${process.env.BOT_USERNAME}/App?start=${user.telegramId}` 
+      referralLink: `https://t.me/${process.env.BOT_USERNAME}/club?start=${user.telegramId}` 
     });
   } catch (error) {
     console.error('Error generating referral link:', error);
