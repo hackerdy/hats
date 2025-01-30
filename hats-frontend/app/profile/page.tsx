@@ -60,7 +60,7 @@ export default function ProfilePage() {
         streakRewards: user.streakRewards,
         day: 0, // Placeholder
         reward: 0, // Placeholder
-      }
+      } 
     : null;
 
   return (
