@@ -235,6 +235,15 @@ bot.command('start', async (ctx) => {
   );
 });
 
+// Add error handling for getUpdates conflict
+bot.catch((err) => {
+  if (err.error_code === 409) {
+    console.error('Conflict: terminated by other getUpdates request; make sure that only one bot instance is running');
+  } else {
+    console.error('Bot error:', err);
+  }
+});
+
 bot.start();
 
   router.post('/validate-telegram-data', validateTelegramData); // Associate the handler with the route
