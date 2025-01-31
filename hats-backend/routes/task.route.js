@@ -79,7 +79,7 @@ router.post('/', async (req, res) => {
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
-});
+});  
 
 // Update task (admin endpoint)
 router.patch('/:taskId', async (req, res) => {
