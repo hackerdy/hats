@@ -209,28 +209,31 @@ const createKeyboard = () => {
 bot.on('my_chat_member', async (ctx) => {
   if (ctx.myChatMember.new_chat_member.status === 'member') {
     await ctx.reply(
-      'Welcome to the Hats club! Join our channel and follow us:',
+      'Welcome to the HATS club! 🎩',
       { reply_markup: createKeyboard() }
     );
   } else {
-    await ctx.reply('Welcome to Telegram Referral Hub! Please join our channel and follow us:', {
+    await ctx.reply('Welcome to the HATS club! 🎩', {
       reply_markup: createKeyboard(),
     });
   }
-});
+}); 
 
 bot.on('message', async (ctx) => {
-  await ctx.reply(
-    'Welcome! Please join our Telegram channel and follow us on Twitter:',
-    { reply_markup: createKeyboard() }
-  );
+  if (ctx.chat.type === 'private') {
+    await ctx.reply(
+      'Welcome to the HATS club! 🎩',
+      { reply_markup: createKeyboard() }
+    );
+  }
 });
+
 
 
 
 bot.command('start', async (ctx) => {
   await ctx.reply(
-    'Welcome! Please join our Telegram channel and follow us on Twitter:',
+    'Welcome to the HATS club! 🎩',
     { reply_markup: createKeyboard() }
   );
 });
