@@ -3,6 +3,7 @@ import { NavBar } from "@/components/nav-bar";
 import "./globals.css";
 import type { Metadata } from "next";
 import { UserProvider } from "@/context/UserContext"; // Import the UserProvider
+import { AppWrapper } from "./AppWrapper"; // Import the AppWrapper
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,10 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} bg-black text-white`}>
-        <UserProvider>
-          <div className="pb-16">{children}</div>
-          <NavBar />
-        </UserProvider>
+       <AppWrapper>{children}</AppWrapper>
       </body>
     </html>
   );
