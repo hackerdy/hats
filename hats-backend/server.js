@@ -8,7 +8,7 @@ import taskRoutes from './routes/task.route.js';
 import { authMiddleware } from './middlewares/auth.js';
 import path from 'path';
 import next from 'next';
-import { TelemetreeClient } from '@tonsolutions/telemetree-node';
+
 
 
 
@@ -37,13 +37,7 @@ console.log('NODE_ENV:', process.env.NODE_ENV);
 console.log('MONGODB_URI:', process.env.MONGODB_URI);
 console.log('Next.js build directory:', path.join(__dirname, './hats-frontend/.next'));
 
-const telemetree = new TelemetreeClient(
-  process.env.TELEMETREE_PROJECT_ID,
-  process.env.TELEMETREE_API_KEY
-);
 
-// Initialize the client before using
-await telemetree.initialize();
 
 nextApp.prepare().then(() => {
   // API routes
