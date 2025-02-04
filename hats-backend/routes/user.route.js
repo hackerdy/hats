@@ -228,6 +228,18 @@ bot.on('message', async (ctx) => {
   }
 });
 
+// Example with node-telegram-bot-api
+bot.on('message', async (msg) => {
+  try {
+      // Track the update
+      const response = await telemetree.trackUpdate(msg);
+      console.log('Tracking response:', response);
+  } catch (error) {
+      console.error('Failed to track message:', error);
+  }
+});
+
+
 
 
 
